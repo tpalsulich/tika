@@ -35,6 +35,14 @@
   <name>Apache Tika parsers</name>
   <url>http://tika.apache.org/</url>
 
+  <repositories>
+    <repository>
+      <id>unidata-releases</id>
+      <name>UNIDATA Releases</name>
+      <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/</url>
+    </repository>
+  </repositories>
+
   <properties>
     <poi.version>3.11-beta2</poi.version>
     <codec.version>1.9</codec.version>
@@ -45,6 +53,8 @@
     <mime4j.version>0.7.2</mime4j.version>
     <vorbis.version>0.6</vorbis.version>
     <pdfbox.version>1.8.7</pdfbox.version>
+
+    <netcdf-java.version>4.5.3</netcdf-java.version>
   </properties>
 
   <dependencies>
@@ -80,8 +90,8 @@
     <!-- Upstream parser libraries -->
     <dependency>
       <groupId>edu.ucar</groupId>
-      <artifactId>netcdf</artifactId>
-      <version>4.2.20</version>
+      <artifactId>netcdf4</artifactId>
+      <version>4.5.3</version>
     </dependency>
     <dependency>
       <groupId>net.sourceforge.jmatio</groupId>
@@ -230,6 +240,18 @@
       <artifactId>slf4j-log4j12</artifactId>
       <version>1.6.1</version>
       <scope>test</scope>
+    </dependency>
+
+    <!-- GribParser dependencies-->
+    <dependency>
+      <groupId>edu.ucar</groupId>
+      <artifactId>cdm</artifactId>
+      <version>${netcdf-java.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>edu.ucar</groupId>
+      <artifactId>grib</artifactId>
+      <version>${netcdf-java.version}</version>
     </dependency>
   </dependencies>
 
